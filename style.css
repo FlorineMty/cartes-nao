@@ -91,3 +91,4 @@
 @media (max-width: 480px) {
   :root { --card-h: 360px; --art-ratio: 0.30; --stats-ratio: 0.16; --footer-ratio: 0.10; }
 }
+</style>
