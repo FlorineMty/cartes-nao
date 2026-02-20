@@ -169,26 +169,66 @@
       background:rgba(0,0,0,0.12);
       padding:6px 8px;border-radius:10px;display:inline-block;
     }
+/* --- ZONE D'IMAGE: taille identique et responsive --- */
 
-    .art{
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.06);
-      background:rgba(0,0,0,0.10);
-      height:170px;
-      display:grid;
-      place-items:center;
-      position:relative;
-      overflow:hidden;
-    }
-    .art img.card-art{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      display:block;
-      transform-origin:center;
-      filter:contrast(1.02) saturate(1.05);
-    }
+/* hauteur de la zone image = proportion de la hauteur de la carte */
+:root {
+  /* tu peux ajuster ce ratio si tu veux une zone plus grande/petite */
+  --art-ratio: 0.36; /* 36% de la hauteur de la carte (ajuste si besoin) */
+}
+
+/* art : box fixe (même pour toutes les cartes) */
+.art {
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.10);
+  /* hauteur déterminée par la hauteur de la carte */
+  height: calc(var(--card-h) * var(--art-ratio));
+  min-height: 120px;   /* garde une taille minimale sur petits écrans */
+  max-height: 220px;   /* limite max si le card-h est grand */
+  width: calc(100% - 0px); /* occupe la largeur du conteneur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0; /* si tu veux un "cadre" interne, ajuste ici */
+}
+
+/* style commun pour les images */
+.art img.card-art {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;   /* largeur dynamique */
+  height: auto;  /* hauteur dynamique */
+  object-position: center center;
+  transition: transform .25s ease, filter .25s ease;
+  /* par défaut on montre toute l'image (aucun recadrage) */
+  object-fit: contain;
+  /* padding si image a fond blanc et tu veux marges : */
+  /* padding: 10px; box-sizing: border-box; */
+}
+
+/* UTILITAIRES : choix d'ajustement */
+
+/* .fit-contain : affiche l'image en entier (bordures visibles si ratio différent) */
+.art.fit-contain img.card-art { object-fit: contain; }
+
+/* .fit-cover : rempli la zone (coupe si ratio différent) */
+.art.fit-cover img.card-art { object-fit: cover; }
+
+/* Si tu veux un "cadre" blanc autour de l'image (optionnel) */
+.art.with-frame img.card-art {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Petite mise en valeur pour images légendaires */
+.theme-gold .art img.card-art {
+  filter: drop-shadow(0 10px 30px rgba(255,200,50,0.15)) saturate(1.05);
+}
+
     .art .mini-glow{
       position:absolute; inset:auto 0 0 0;
       height:46%;
