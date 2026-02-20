@@ -76,7 +76,12 @@ h1{margin:0;font-size:28px}
 .stars{font-weight:800;letter-spacing:1px}
 
 /* description */
-.desc{padding:8px;border-radius:10px;background:rgba(0,0,0,0.04);overflow-y:auto;box-sizing:border-box;font-size:14px;line-height:1.35}
+.desc {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 8px;
+  overflow: visible;   /* important */
+}
 
 /* effect & footer */
 .effect{padding:8px;border-radius:10px;border:1px dashed rgba(255,255,255,0.06);background:rgba(255,255,255,0.01)}
