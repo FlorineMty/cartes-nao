@@ -1,12 +1,15 @@
 /* ================== GLOBAL ================== */
 
-:root{
-  --bg:#120606;
-  --text:#ffffff;
-  --card-w:340px;
-  --card-h:480px;
-  --radius:18px;
-  --shadow:0 18px 50px rgba(0,0,0,0.45);
+:root {
+  --card-w: 340px;
+  --card-h: 476px;
+
+  --radius: 18px;
+  --shadow: 0 18px 50px rgba(0,0,0,0.45);
+
+  --art-ratio: 0.36;
+  --stats-ratio: 0.18;
+  --footer-ratio: 0.08;
 }
 
 body{
