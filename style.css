@@ -90,4 +90,14 @@
 @media (max-width: 480px) {
   :root { --card-h: 360px; --art-ratio: 0.30; --stats-ratio: 0.16; --footer-ratio: 0.10; }
 }
+/* assurance d'occupation des lignes de la grille */
+.header { grid-row: 1; }
+.art    { grid-row: 2; }
+.stats  { grid-row: 3; }
+.desc   { grid-row: 4; }
+.effect { grid-row: 5; }
+.footer { grid-row: 6; }
+
+/* debug visuel temporaire — supprime après vérification */
+.content > * { /* outline: 1px dashed rgba(255,255,255,0.04); */ }
 
