@@ -7,33 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="toolbar" aria-hidden="false">
-    <div class="left">
-      <span class="pill"><span style="font-weight:900">Filtres</span></span>
-
-      <select id="filterType" aria-label="Filtre type">
-        <option value="ALL">Tout</option>
-        <option value="NAO">NAO</option>
-        <option value="TT">TT</option>
-      </select>
-
-      <select id="filterRarity" aria-label="Filtre rareté">
-        <option value="ALL">Toutes raretés</option>
-        <option value="LEGENDARY">Légendaire</option>
-        <option value="ULTRA_RARE">Ultra rare</option>
-        <option value="RARE">Rare</option>
-        <option value="COMMON">Commune</option>
-      </select>
-
-      <input id="search" type="search" placeholder="Recherche (ex: transport, 13e, vendredi…)" />
-    </div>
-
-    <div class="right">
-      <button id="btnCopyJson">Copier JSON</button>
-      <button onclick="window.print()">Imprimer</button>
-    </div>
-  </section>
-
   <main id="cards" class="grid" aria-live="polite"></main>
 
   <script>
