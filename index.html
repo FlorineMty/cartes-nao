@@ -148,34 +148,36 @@
         const el = document.createElement("section");
         el.className = `card ${t.cls}`;
         el.innerHTML = `
-          <div class="frame"></div>
-          <div class="content">
-            <div class="topbar">
-              <div class="badge">${t.label}</div>
-              <div class="code">${safe(card.id)}</div>
-            </div>
+  <div class="frame"></div>
+  <div class="content">
+    <div class="header">
+      <div class="topbar">
+        <div class="badge">${t.label}</div>
+        <div class="code">${safe(card.id)}</div>
+      </div>
 
-            <h2 class="title">${safe(card.title)}</h2>
-            <div class="subtitle">${safe(card.subtitle)}</div>
+      <h2 class="title">${safe(card.title)}</h2>
+      <div class="subtitle">${safe(card.subtitle)}</div>
+    </div>
 
-            <div class="art" data-image="${safe(card.image || '')}">
-              ${artContent}
-              <div class="art-overlay" aria-hidden="true"></div>
-              <div class="mini-glow"></div>
-            </div>
+    <div class="art" data-image="${safe(card.image || '')}">
+      ${artContent}
+      <div class="art-overlay" aria-hidden="true"></div>
+      <div class="mini-glow"></div>
+    </div>
 
-            <div class="stats">${statsRows}</div>
+    <div class="stats">${statsRows}</div>
 
-            <p class="desc">${safe(card.desc)}</p>
+    <p class="desc">${safe(card.desc)}</p>
 
-            ${effect}
+    ${effect}
 
-            <div class="footer">
-              <span><strong>${safe(card.footerLeft || (card.type === "TT" ? "Télétravail 2026" : "NAO 2026"))}</strong></span>
-              <span class="tiny">${safe(card.footerRight || "CGT")}</span>
-            </div>
-          </div>
-        `;
+    <div class="footer">
+      <span><strong>${safe(card.footerLeft || (card.type === "TT" ? "Télétravail 2026" : "NAO 2026"))}</strong></span>
+      <span class="tiny">${safe(card.footerRight || "CGT")}</span>
+    </div>
+  </div>
+`;
         mount.appendChild(el);
       });
     }
